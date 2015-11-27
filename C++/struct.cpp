@@ -24,11 +24,28 @@
 using namespace std;
 
 struct student{
+private:
 	int id;
 	string name;
 	float percentage;
+
+public:	
+	void show();
+	void SetInfo(int _id, string _name, float _percentage);
 };
 
+void student::show(){
+	cout << "id : " << id << endl;
+	cout << "name : " << name << endl;
+	cout << "percent : " << percentage << endl;
+}
+
+void student::SetInfo(int _id, string _name, float _percentage){
+	id = _id;
+	name = _name;
+	percentage = _percentage;
+}
+	
 int main(){
 	/*
 	struct student s = {1, "hong, gil dong", 90.5};
@@ -37,10 +54,16 @@ int main(){
 	cout << "percent : " << s.percentage << endl;
 	*/
 
-	student s = {1, "hong, gil dong", 90.5};
+	//	student s = {1, "hong, gil dong", 90.5};
+	/*
 	cout << "id : " << s.id << endl;
 	cout << "name : " << s.name << endl;
 	cout << "percent : " << s.percentage << endl;
+	*/
+
+	student s;
+	s.SetInfo(1, "hong, gil-dong", 90.5);
+	s.show();
 
 	return 0;
 }
